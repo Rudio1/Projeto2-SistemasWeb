@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>Login</title>
+</head>
+<body>
+
+    <div class="conteudo-login">
+        <div class="conteudo-formulario-login">     
+            <form id="form_login" method="post">
+                <label>Email:</label>
+                <input name="login" id="ipt_email_login" type="text"  placeholder="Digite seu email...">
+                <label>Senha:<a href=""><b class="forget-password">Esqueceu sua senha?</b></a></label>
+                <input name="senha" id="ipt_senha_login" type="password"  placeholder="Digite sua senha...">
+                <div class="nao-cadastrado">
+                <span>Não possui cadastro? <a href=""><b>Registre-se!</b></a></span>
+                </div>
+                <span id="mensagem_login"></span>
+                <div class="botao">
+                <button id="bt_enviar" type="submit"><a href="">Entrar</a></button>
+                </div>
+            </form>
+        </div>   
+    </div>
+</body>
+</html>
