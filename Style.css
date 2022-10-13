@@ -1,0 +1,104 @@
+.conteudo-login {
+    display: flex;
+    justify-content: center;
+    height: 40em;
+    align-items: center;
+}
+
+.conteudo-formulario-login button {
+    
+    display: block;
+    padding: 1em 2em;
+    border-radius: 0.5em;
+    border: none;
+    background-color: black;
+    color: black;
+    margin: 1em 0;
+    cursor: pointer;
+    
+}
+
+form h1 {
+    
+    text-align: center;
+    color: black;
+    margin-top: 0;
+}
+
+span {
+    
+    display: block;
+    color: black;
+    padding-top: 1em;
+    letter-spacing: 0.05em;
+    font-size: 1em;
+    font-weight: 900;
+}
+
+b {
+    cursor: pointer;
+    color: black;
+    font-size: 1em;
+}
+
+a {
+    text-decoration: none;
+}
+
+#ipt_email_login {
+    color: white;
+}
+
+#ipt_senha_login {
+    color: white;
+}
+label {
+    display: flex;
+    
+    color: black;
+    padding: 1em;
+    font-weight: 900;
+    justify-content: space-between;
+}
+
+input {
+    
+    background-color: black;
+    border-radius: 0.5em;
+    border: 2px solid gray;
+    padding: 1em 1em;
+    color: black;
+    outline: none;
+    width: 25em;
+    font-weight: bold;
+}
+
+
+.img-login {
+    width: 30em;
+}
+
+.forget-password {
+    cursor: pointer;
+    color: black;
+    font-size: 1em;
+}
+
+
+
+.nao-cadastrado {
+    display: flex;
+    justify-content: center;
+} 
+
+.botao {
+    background-color: white;
+    display: flex;
+    justify-content: center;
+    justify-items: center;
+}
+
+.botao a {
+    color: white;
+}
+
