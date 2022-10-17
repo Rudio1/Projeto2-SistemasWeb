@@ -21,15 +21,20 @@ Session.configure(bind=engine)
 session = Session()
 
 def selectUserByEmail(email):
-    employees = session.query(Users).filter_by(email=email).all()
+    user = session.query(Users).filter_by(email=email).all()
 
-    print(employees[0])
+    return user
     
 def addUser(username, email, password):
     password = password.encode('utf-8')
     
-    cryptPassword = bcrypt.hashpw(password, bcrypt.gensalt())
+    cryptPassword = bcrypt.hashpw(password, bcrypt.gensalt(10))
     
     newUser = Users(username=username, email=email, password=cryptPassword)
     session.add(newUser)
     session.commit()
+
+def checkPassword(password, hashed):
+    password = password.encode('utf-8')
+
+    return bcrypt.checkpw(password, hashed.encode('utf-8'))
