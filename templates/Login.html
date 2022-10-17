@@ -14,9 +14,14 @@
       <div id="login">
         <form method="post" action="">
           <h1>Login</h1>
+
+          {% if error %}
+            <p class=error><strong>Erro:</strong> {{ error }}
+          {% endif %}
+
           <p>
-            <label for="nome_login">Seu nome</label>
-            <input id="nome_login" name="nome_login" required="required" type="text" />
+            <label for="email_login">Email</label>
+            <input id="email_login" name="email_login" required="required" type="text" />
           </p>
 
           <p>
