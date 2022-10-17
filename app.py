@@ -9,4 +9,4 @@ def initial():
 
     usuarios = response.json()
 
-    return render_template('base.html', usuarios=usuarios)
+    return render_template('Cadastro.html', usuarios=usuarios)
