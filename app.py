@@ -1,4 +1,5 @@
 from flask import Flask, render_template, request
+from api import addUser
 
 app = Flask(__name__)
 
@@ -13,5 +14,7 @@ def initial():
 
 @app.route('/cadastro', methods=['POST', 'GET'])
 def cadastro():
-    print("oi")
+    print("Clicou cadastrar")
+
+    
     return render_template('Cadastro.html')
