@@ -123,13 +123,7 @@
   -webkit-transition: all 0.4s linear;
   transition: all 0.4s  linear;
 }
- 
-/* .link a:hover {
-  color: #39bfd7;
-  background: #f7f7f7;
-  border: 1px solid #4ab3c6;
-} */
- 
+
 #login{
   position: absolute;
   top: 0px;

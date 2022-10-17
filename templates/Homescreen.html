@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -9,60 +10,27 @@
 </head>
 
 <body>
-    <div class="topo">
-
-        <div class="menu">
-            <ul>
-                <li><a href="">Principal</a></li>
-                <li><a href="">Sobre Nós</a></li>
-                <li><a href="">Contato</a></li>
-            </ul>
-        </div>
-    </div>
-
     <div class="conteudo-destaque">
-    
-        <div class="esquerda">
-            <div class="informacoes">
-                <h1>Sistema de avaliação</h1>
-                <p>O jeito certo de receber as avaliações dos seus alunos.<p>
+        <div class="informacoes">
+            <h1>Sistema de avaliação</h1>
+            <p>O jeito certo de receber as avaliações dos seus alunos.
+            <p>
 
-                <form>
-                    <select class="borda-branca">
-                        <option>Selecione a visita que deseja avaliar</option>
-                        <option value="">Visita 1</option>
-                        <option value="">Visita 2</option>
-                        <option value="">Visita 3</option>
-                        <option value="">Visita 4</option>
-                    </select>
-                </form>
-            </div>
-        </div>
+            <form method="post" action="">
+                <select id="select_visita" name="select_visita" value="" class="borda-preta" required>
+                    <option value=""></option>
+                    {% if visitas %}
+                    {% for visita in visitas %}
+                    <option value="{{visita.id}}">{{visita.descricao}}</option>
+                    {% endfor %}
+                    {% endif %}
+                </select>
 
-        <div class="direita">
-            <div class="contato">
-                <h1>Avaliação de visitas</h1>
-                <p><p>
-                <form>
-                    <input type="text" placeholder="Nome" class="borda-branca">
-                    <br>
-                    <input type="text" placeholder="Telefone" class="borda-branca">
-                    <br>
-                    <input type="text" placeholder="E-mail de estudante" class="borda-branca">
-                    <!-- <select class="borda-branca">
-                        <option value="">Avalie a visita</option>
-                        <option value="">Otima</option>
-                        <option value="">Boa</option>
-                        <option value="">Ruim</option>
-                        <option value="">Péssima</option>
-                    </select> -->
-                    <br>
-                    <textarea class="borda-branca">Preencha aqui o seu sentimento sobre a visita</textarea>
-                    <br>
-                    <button type="submit" class="borda-branca">ENVIAR</button>
-                </form>
-            </div>
+                <textarea class="borda-preta" id="comentario" name="comentario" placeholder="Preencha aqui o seu sentimento sobre a visita" required></textarea>
+                <button type="submit" class="borda-preta" name="button_enviar" value="submit_button">ENVIAR</button>
+            </form>
         </div>
     </div>
 </body>
+
 </html>
