@@ -53,28 +53,29 @@ def cadastro():
 
 @app.route('/homepage', methods=['POST', 'GET'])
 def homepage():
+    global user
+    
     if user == {}:
         return redirect('/')
     
     if request.method == 'POST':
+        print(request.form['button_menu'])
         if request.form['button_menu'] == 'add_visita':
             pass
         elif request.form['button_menu'] == 'signout':
-            global user
             user = {}
-        else:
+            return redirect('/')
+        elif request.form['button_menu'] == 'submit':
             visita = request.form['select_visita']
             comentario = request.form['comentario']
 
             addAvaliacao(user['pk_userId'], visita, comentario)
-            pass
 
     visitasDB = selectAllVisitas()
     visitas = []
 
     for visita in visitasDB:
         media = visita.media_score
-
 
         newAttr = ''
         
