@@ -11,10 +11,18 @@
 
 <body>
     <div class="conteudo-destaque">
+        <div class="menu">
+            <form method="post">
+                <button type="submit" name="button_menu" value="add_visita" class="button-add button-colorwhite">Adicionar visitas</button>
+                <button type="submit" name="button_menu" value="signout" class="button-add button-colorwhite">Sair</button>
+            </form>
+
+        </div>
         <div class="informacoes">
-            <h1>Sistema de avaliação</h1>
-            <p>O jeito certo de receber as avaliações dos seus alunos.
-            <p>
+
+            
+            <h1>Envie a sua avaliação</h1>
+            <p>O jeito certo de receber as avaliações dos seus alunos.</p>
 
             <form method="post" action="">
                 <select id="select_visita" name="select_visita" value="" class="borda-preta" required>
@@ -26,9 +34,32 @@
                     {% endif %}
                 </select>
 
-                <textarea class="borda-preta" id="comentario" name="comentario" placeholder="Preencha aqui o seu sentimento sobre a visita" required></textarea>
-                <button type="submit" class="borda-preta" name="button_enviar" value="submit_button">ENVIAR</button>
+                <textarea class="borda-preta" id="comentario" name="comentario"
+                    placeholder="Preencha aqui o seu sentimento sobre a visita" required></textarea>
+                <button type="submit" class="borda-preta button" name="button_enviar" value="submit_button">ENVIAR</button>
             </form>
+
+            <table>
+                <caption>Avaliaçoes de visitas</caption>
+                <thead>
+                    <tr>
+                        <th scope="col">Data da visita</th>
+                        <th scope="col">Descrição</th>
+                        <th scope="col">Professor</th>
+                        <th scope="col">Avaliações</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    {% for visita in visitas %}
+                    <tr>
+                        <td data-label="Data">17/10/2022</td>
+                        <td data-label="Descricao">{{visita.descricao}}</td>
+                        <td data-label="Professor">{{visita.professor}}</td>
+                        <td data-label="Comentario">{{visita.media_str}}</td>
+                    </tr>
+                    {% endfor %}
+                </tbody>
+            </table>
         </div>
     </div>
 </body>

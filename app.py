@@ -1,9 +1,9 @@
 from flask import Flask, redirect, render_template, request
 from api import addAvaliacao, addUser, checkPassword, selectAllVisitas, selectUserByEmail
+import pandas as pd
 
 app = Flask(__name__)
 
-visitas = []
 user = {}
 
 @app.route('/', methods=['POST', 'GET'])
@@ -57,16 +57,51 @@ def homepage():
         return redirect('/')
     
     if request.method == 'POST':
+        if request.form['button_menu'] == 'add_visita':
+            pass
+        elif request.form['button_menu'] == 'signout':
+            global user
+            user = {}
+        else:
+            visita = request.form['select_visita']
+            comentario = request.form['comentario']
 
-        visita = request.form['select_visita']
-        comentario = request.form['comentario']
+            addAvaliacao(user['pk_userId'], visita, comentario)
+            pass
 
-        addAvaliacao(user['pk_userId'], visita, comentario)
-        pass
+    visitasDB = selectAllVisitas()
+    visitas = []
 
-    global visitas
-    visitas = selectAllVisitas()
-    
+    for visita in visitasDB:
+        media = visita.media_score
+
+
+        newAttr = ''
+        
+        if media == None:
+            newAttr = 'NÃO HÁ'
+        else:
+            if media == 1:
+                newAttr = 'TOTALMENTE POSITIVO'
+            elif media == -1:
+                newAttr = 'TOTALMENTE NEGATIVO'
+            elif media == 0:
+                newAttr = 'NEUTRO'
+            elif media < 0:
+                newAttr = 'PARCIALMENTE NEGATIVO'
+            elif media > 0:
+                newAttr = 'PARCIALMENTE POSITIVO'
+        
+        
+        visitas.append({
+            'id': visita.id,
+            'professor': visita.professor,
+            'descricao': visita.descricao,
+            'qtd_avaliacoes': visita.qtd_avaliacoes,
+            'media_score': visita.media_score,
+            'media_str': newAttr
+        })
+
     return render_template('Homescreen.html', visitas=visitas)
 
 if __name__ == '__main__':

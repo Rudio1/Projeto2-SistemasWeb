@@ -72,7 +72,7 @@ def addAvaliacao(user, visita, avaliacao):
     session.commit()
 
 def selectAllVisitas():
-    return session.query(Visitas).all()
+    return engine.engine.execute('SELECT *, (SELECT COUNT(b.score) FROM avaliacoes b WHERE a.id=b.visita) AS qtd_avaliacoes, (SELECT AVG(b.score) FROM avaliacoes b WHERE a.id=b.visita) AS media_score FROM visitas a')
 
 def checkPassword(password, hashed):
     password = password.encode('utf-8')
