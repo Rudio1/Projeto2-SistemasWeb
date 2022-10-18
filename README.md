@@ -6,28 +6,41 @@
 <img src="http://img.shields.io/static/v1?label=STATUS&message=%20CONCLUIDO&color=GREEN&style=for-the-badge"/>
 </p>
 
-<!-- # 📁 Acesso ao projeto
+# 📁 Acesso ao projeto
 
-**Você deve fazer o download do nosso projeto e abrir com **
+ 
+**Fazer a instalação das dependencias abaixo:**
 
-# 🛠️ Abrir e rodar o projeto
+- ``requests``
+- ``sqlalchemy``
+- ``bcrypy``
+- ``pandas``
+- ``flask``
+- ``mariadb``
 
-**Apresente as instruções necessárias para abrir e executar o projeto** -->
+Comando para rodar o app localhost: <strong>python app.py</strong>
 
-  
   ## ✔️ Técnicas e tecnologias utilizadas
 
 - ``Python``
 - ``Flask``
 - ``HTML / CSS / JS``
   
-  
-  **Autores**
-  
-  
- [<img src="https://avatars.githubusercontent.com/u/90154109?v=4" width=115><br><sub>Guilherme Rudio Correa</sub>](https://github.com/Rudio1) |  [<img src="https://avatars.githubusercontent.com/u/44504078?v=4" width=115><br><sub>Ronaldo Bueno</sub>](https://github.com/Ronaldobueno16) |  [<img src="https://avatars.githubusercontent.com/u/114961313?v=4" width=115><br><sub>Nathan Silva</sub>](https://github.com/Nathansilva20) |
-| :---: | :---: | :---: |
-  
+ # ✔️ **Proposta**
+ 
+**Utilizamos uma API de sentimentos para fazer a avaliação de visitas tecnicas em um determinado local. Facilitando o feedback dos alunos e a vida do professor**
   
 https://gotit.ai/pt-br/Home/Sentiment
 
+
+# Banco de dados 
+![image](https://user-images.githubusercontent.com/90154109/145490198-cdd95dd3-7d63-44a7-8e15-ddcec8592a60.png)    
+
+
+<br>  
+
+# Autores
+
+ [<img  src="https://avatars.githubusercontent.com/u/90154109?v=4" width=115><br><sub>Guilherme Rudio Correa</sub>](https://github.com/Rudio1) |  [<img src="https://avatars.githubusercontent.com/u/44504078?v=4" width=115><br><sub>Ronaldo Bueno</sub>](https://github.com/Ronaldobueno16) |  [<img src="https://avatars.githubusercontent.com/u/114961313?v=4" width=115><br><sub>Nathan Silva</sub>](https://github.com/Nathansilva20) |
+| :---: | :---: | :---: |
+  
