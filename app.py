@@ -47,6 +47,7 @@ def cadastro():
             print("As senhas não conferem")
         else:
             addUser(nome_cadastro, emailcadastro, senha_cadastro)
+            return redirect('/')
 
     
     return render_template('Cadastro.html')
