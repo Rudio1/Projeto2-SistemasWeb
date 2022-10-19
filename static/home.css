@@ -31,6 +31,7 @@ textarea {
   color: #333;
 }
 
+
 .button {
   width: 100%;
   padding: 10px 15px;
@@ -53,13 +54,16 @@ textarea {
   display: flex;
   /* background-color: #000000; */
 
-  justify-content: space-between;
+  justify-content: right;
 }
 
 .button-add {
   border: none;
   padding: 15px;
   cursor: pointer;
+  width: 100%;
+  align-items: right;
+  justify-content: right;
 
 }
 
