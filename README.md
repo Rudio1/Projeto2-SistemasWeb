@@ -13,7 +13,7 @@
 
 - ``requests``
 - ``sqlalchemy``
-- ``bcrypy``
+- ``bcrypyt``
 - ``pandas``
 - ``flask``
 - ``mariadb``
